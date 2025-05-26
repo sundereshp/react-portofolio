@@ -4,26 +4,27 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      // Single Page Apps for GitHub Pages
-      (function() {
-        const base = '/react-portofolio';
-        const currentPath = window.location.pathname;
-        
-        // Remove any existing base path to prevent double base paths
-        const normalizedPath = currentPath.replace(/^\/react-portofolio(\/|$)/, '/');
-        
-        // Only redirect if we're not already at the correct path
-        if (normalizedPath !== currentPath) {
-          const newPath = `${base}${normalizedPath === '/' ? '' : normalizedPath}${window.location.search}${window.location.hash}`;
-          window.location.href = newPath;
-        } else {
-          // If we're already at the correct path but still seeing 404, try loading the app
-          window.location.href = base;
-        }
-      })();
+      // Simple redirect to the root of the app
+      const base = '/react-portofolio';
+      const currentPath = window.location.pathname;
+      
+      // If we're at /react-portofolio/react-portofolio, redirect to /react-portofolio
+      if (currentPath.startsWith(base + base)) {
+        window.location.href = base + window.location.search + window.location.hash;
+      } 
+      // If we're not at the root, redirect to the root
+      else if (currentPath !== base && currentPath !== base + '/') {
+        window.location.href = base + (window.location.search || '') + (window.location.hash || '');
+      }
     </script>
   </head>
   <body>
-    <p>Redirecting...</p>
+    <p>Redirecting to the application...</p>
+    <script>
+      // Fallback in case the above redirect doesn't work
+      setTimeout(() => {
+        window.location.href = '/react-portofolio';
+      }, 1000);
+    </script>
   </body>
 </html>
