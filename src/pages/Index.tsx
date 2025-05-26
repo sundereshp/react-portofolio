@@ -43,7 +43,7 @@ const Index = () => {
       description: "Deep learning model to control games via hand gestures using Python and OpenCV for real-time gesture recognition.",
       tech: ["Python", "OpenCV", "Deep Learning", "Computer Vision"],
       year: "2024",
-      image: "/src/images/game-controlling-using-hand-gestures-1.png",
+      image: "/public/images/game-controlling-using-hand-gestures-1.png",
       githubUrl: "https://github.com/sundereshp/gesturehand"
     },
     {
@@ -51,7 +51,7 @@ const Index = () => {
       description: "Hybrid deep learning model using LSTM and Transformer for Tamil language auto text completion with PyTorch.",
       tech: ["PyTorch", "LSTM", "Transformer", "NLP", "Tamil Language"],
       year: "2025",
-      image: "/src/images/images.jpeg",
+      image: "/public/images/images.jpeg",
       githubUrl: "https://github.com/sundereshp/tamil-auto-complete"
     },
     {
@@ -59,7 +59,7 @@ const Index = () => {
       description: "Web-based task manager using Node.js and React.js for efficient task creation and organization.",
       tech: ["Node.js", "React.js", "MongoDB", "Express"],
       year: "2025",
-      image: "/src/images/Screenshot 2025-05-26 111950.png",
+      image: "/public/images/Screenshot 2025-05-26 111950.png",
       githubUrl: "https://github.com/sundereshp/taskapplicatoin"
     },
     {
@@ -67,7 +67,7 @@ const Index = () => {
       description: "Electron-based desktop application for monitoring user activity with global keystroke and mouse tracking.",
       tech: ["Electron", "JavaScript", "Node.js", "Desktop Development"],
       year: "2025",
-      image: "/src/images/Screenshot 2025-05-26 113601.png",
+      image: "/public/images/Screenshot 2025-05-26 113601.png",
       githubUrl: "https://github.com/sundereshp/desapp"
     }
   ];
