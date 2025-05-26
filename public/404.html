@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Simple redirect to the root of the app
+      const base = '/react-portofolio';
+      const currentPath = window.location.pathname;
+      
+      // If we're at /react-portofolio/react-portofolio, redirect to /react-portofolio
+      if (currentPath.startsWith(base + base)) {
+        window.location.href = base + window.location.search + window.location.hash;
+      } 
+      // If we're not at the root, redirect to the root
+      else if (currentPath !== base && currentPath !== base + '/') {
+        window.location.href = base + (window.location.search || '') + (window.location.hash || '');
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to the application...</p>
+    <script>
+      // Fallback in case the above redirect doesn't work
+      setTimeout(() => {
+        window.location.href = '/react-portofolio';
+      }, 1000);
+    </script>
+  </body>
+</html>
