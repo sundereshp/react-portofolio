@@ -43,7 +43,7 @@ const Index = () => {
       description: "Deep learning model to control games via hand gestures using Python and OpenCV for real-time gesture recognition.",
       tech: ["Python", "OpenCV", "Deep Learning", "Computer Vision"],
       year: "2024",
-      image: "/images/game-controlling-using-hand-gestures-1.png",
+      image: "./images/game-controlling-using-hand-gestures-1.png",
       githubUrl: "https://github.com/sundereshp/gesturehand"
     },
     {
@@ -51,7 +51,7 @@ const Index = () => {
       description: "Hybrid deep learning model using LSTM and Transformer for Tamil language auto text completion with PyTorch.",
       tech: ["PyTorch", "LSTM", "Transformer", "NLP", "Tamil Language"],
       year: "2025",
-      image: "/images/images.jpeg",
+      image: "./images/images.jpeg",
       githubUrl: "https://github.com/sundereshp/tamil-auto-complete"
     },
     {
@@ -59,7 +59,7 @@ const Index = () => {
       description: "Web-based task manager using Node.js and React.js for efficient task creation and organization.",
       tech: ["Node.js", "React.js", "MongoDB", "Express"],
       year: "2025",
-      image: "/images/Screenshot 2025-05-26 111950.png",
+      image: "./images/Screenshot 2025-05-26 111950.png",
       githubUrl: "https://github.com/sundereshp/taskapplicatoin"
     },
     {
@@ -67,7 +67,7 @@ const Index = () => {
       description: "Electron-based desktop application for monitoring user activity with global keystroke and mouse tracking.",
       tech: ["Electron", "JavaScript", "Node.js", "Desktop Development"],
       year: "2025",
-      image: "/images/Screenshot 2025-05-26 113601.png",
+      image: "./images/Screenshot 2025-05-26 113601.png",
       githubUrl: "https://github.com/sundereshp/desapp"
     }
   ];
@@ -280,13 +280,14 @@ const Index = () => {
               <Card key={index} className="group overflow-hidden backdrop-blur-sm bg-white/10 dark:bg-gray-800/10 border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
                 <div className="relative overflow-hidden h-64">
                   <img 
-                    src={project.image} 
+                    src={new URL(project.image, import.meta.url).href}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
                       // Fallback to a data URL or empty image if the original fails to load
                       e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZmlsbD0iI2VlZSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM5OTkiPk5vIEltYWdlPC90ZXh0Pjwvc3ZnPg==';
                       e.currentTarget.alt = 'Project thumbnail not available';
+                      console.error('Failed to load image:', project.image);
                     }}
                     loading="lazy"
                   />
