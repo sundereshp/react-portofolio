@@ -43,7 +43,7 @@ const Index = () => {
       description: "Deep learning model to control games via hand gestures using Python and OpenCV for real-time gesture recognition.",
       tech: ["Python", "OpenCV", "Deep Learning", "Computer Vision"],
       year: "2024",
-      image: "/images/game-controlling-using-hand-gestures-1.png",
+      image: "/react-portofolio/images/game-controlling-using-hand-gestures-1.png",
       githubUrl: "https://github.com/sundereshp/gesturehand"
     },
     {
@@ -51,7 +51,7 @@ const Index = () => {
       description: "Hybrid deep learning model using LSTM and Transformer for Tamil language auto text completion with PyTorch.",
       tech: ["PyTorch", "LSTM", "Transformer", "NLP", "Tamil Language"],
       year: "2025",
-      image: "/images/images.jpeg",
+      image: "/react-portofolio/images/images.jpeg",
       githubUrl: "https://github.com/sundereshp/tamil-auto-complete"
     },
     {
@@ -59,7 +59,7 @@ const Index = () => {
       description: "Web-based task manager using Node.js and React.js for efficient task creation and organization.",
       tech: ["Node.js", "React.js", "MongoDB", "Express"],
       year: "2025",
-      image: "/images/Screenshot 2025-05-26 111950.png",
+      image: "/react-portofolio/images/Screenshot 2025-05-26 111950.png",
       githubUrl: "https://github.com/sundereshp/taskapplicatoin"
     },
     {
@@ -67,7 +67,7 @@ const Index = () => {
       description: "Electron-based desktop application for monitoring user activity with global keystroke and mouse tracking.",
       tech: ["Electron", "JavaScript", "Node.js", "Desktop Development"],
       year: "2025",
-      image: "/images/Screenshot 2025-05-26 113601.png",
+      image: "/react-portofolio/images/Screenshot 2025-05-26 113601.png",
       githubUrl: "https://github.com/sundereshp/desapp"
     }
   ];
@@ -280,13 +280,15 @@ const Index = () => {
               <Card key={index} className="group overflow-hidden backdrop-blur-sm bg-white/10 dark:bg-gray-800/10 border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
                 <div className="relative overflow-hidden h-64">
                   <img 
-                    src={project.image} 
+                    src={process.env.PUBLIC_URL + project.image} 
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
                       // Fallback to a placeholder image if the original fails to load
-                      e.currentTarget.src = './images/placeholder.png';
+                      e.currentTarget.src = process.env.PUBLIC_URL + '/images/placeholder.png';
+                      e.currentTarget.alt = 'Project thumbnail not available';
                     }}
+                    loading="lazy"
                   />
                   <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
                     {project.year}
