@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Get the current path and redirect to /react-portofolio with the path
+      const path = window.location.pathname;
+      const search = window.location.search;
+      const hash = window.location.hash;
+      
+      // Remove /react-portofolio if it's already in the path to avoid duplicates
+      const cleanPath = path.replace(/^\/react-portofolio(\/|$)/, '/');
+      
+      // Redirect to the correct URL
+      window.location.href = 
+        '/react-portofolio' + 
+        (cleanPath === '/' ? '' : cleanPath) + 
+        search + 
+        hash;
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
