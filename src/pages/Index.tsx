@@ -60,7 +60,7 @@ const Index = () => {
       tech: ["Node.js", "React.js", "MongoDB", "Express"],
       year: "2025",
       image: "/react-portofolio/images/Screenshot 2025-05-26 111950.png",
-      githubUrl: "https://github.com/sundereshp/taskapplicatoin"
+      githubUrl: "https://github.com/sundereshp/tmaFinal"
     },
     {
       title: "Desktop Activity Tracker",
